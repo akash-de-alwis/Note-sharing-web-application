@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Study Material Exchange</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="logo">
+          <div class="logo-icon">
+            <i class="fas fa-book-open"></i>
+            <i class="fas fa-exchange-alt overlay-icon"></i>
+          </div>
+          <h1>NoteFlick</h1>
+        </div>
+        <p>Share and download study materials with your fellow students</p>
+        <button id="admin-toggle" class="admin-toggle">
+          <i class="fas fa-lock"></i> Admin Panel
+        </button>
+      </header>
+
+      <section class="upload-section">
+        <h2>Upload Study Material</h2>
+        <form id="upload-form">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input 
+              type="text" 
+              id="title" 
+              name="title" 
+              placeholder="e.g., Quiz 1 Solutions, Midterm Paper 2023, Module 3 Notes" 
+              required
+            >
+          </div>
+          
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea 
+              id="description" 
+              name="description" 
+              rows="3" 
+              placeholder="Brief description about your material (e.g., 'Complete solutions for Database midterm exam 2023', 'Comprehensive notes covering Module 3 topics including examples')" 
+              required
+            ></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label for="faculty">Faculty</label>
+            <select 
+              id="faculty" 
+              name="faculty" 
+              class="faculty-select" 
+              required
+            >
+              <option value="" disabled selected>Select your faculty</option>
+              <option value="IT">Information Technology</option>
+              <option value="ENG">Engineering</option>
+              <option value="BM">Business Management</option>
+              <option value="HS">Humanity and Science</option>
+              <option value="ARCH">Architecture</option>
+              <option value="HC">Hospitality and Culinary</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group half-width">
+              <label for="year">Year</label>
+              <select 
+                id="year" 
+                name="year" 
+                class="year-select" 
+                required
+              >
+                <option value="" disabled selected>Select year</option>
+                <option value="1">1st Year</option>
+                <option value="2">2nd Year</option>
+                <option value="3">3rd Year</option>
+                <option value="4">4th Year</option>
+              </select>
+            </div>
+
+            <div class="form-group half-width">
+              <label for="semester">Semester</label>
+              <select 
+                id="semester" 
+                name="semester" 
+                class="semester-select" 
+                required
+              >
+                <option value="" disabled selected>Select semester</option>
+                <option value="1">1st Semester</option>
+                <option value="2">2nd Semester</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input 
+              type="text" 
+              id="subject" 
+              name="subject" 
+              placeholder="e.g., Database Management Systems (CSE2042), Web Programming (CSE3013)" 
+              required
+            >
+          </div>
+          
+          <div class="form-group">
+            <label for="author">Your Name</label>
+            <input 
+              type="text" 
+              id="author" 
+              name="author" 
+              placeholder="Enter your full name" 
+              required
+            >
+          </div>
+          
+          <div class="form-group">
+            <label for="file">File</label>
+            <input type="file" id="file" name="file">
+            <small class="file-hint">Leave empty when editing to keep the existing file</small>
+          </div>
+          
+          <div id="confirmation-dialog" class="confirmation-dialog hidden">
+            <div class="confirmation-content">
+              <h3>⚠️ Important Notice</h3>
+              <p>Please be aware that once you submit this material:</p>
+              <ul>
+                <li>You cannot edit or delete the file after upload</li>
+                <li>Make sure all details are correct</li>
+              </ul>
+              <div class="confirm-checkbox">
+                <input type="checkbox" id="confirm-check">
+                <label for="confirm-check">I have verified all details and understand I cannot modify them later</label>
+              </div>
+              <div class="timer">Submit enabled in <span id="countdown">10</span> seconds</div>
+              <button type="submit" id="final-submit" disabled>Upload Material</button>
+              <button type="button" class="cancel-btn">Cancel</button>
+            </div>
+          </div>
+          
+          <button type="button" id="initial-submit">Upload Material</button>
+        </form>
+      </section>
+
+      <section class="materials-section">
+        <div class="materials-header">
+          <h2>Available Materials</h2>
+          <form id="search-form" class="search-form">
+            <div class="search-container">
+              <div class="search-input-wrapper">
+                <i class="fas fa-search search-icon"></i>
+                <input 
+                  type="search" 
+                  id="search-input" 
+                  placeholder="Search materials by title, description, or author..."
+                  class="search-input"
+                >
+              </div>
+              <select id="search-subject" class="search-subject">
+                <option value="">All Subjects</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div id="materials-list" class="materials-grid"></div>
+      </section>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
