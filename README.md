@@ -2,16 +2,6 @@
 
 A web application that allows students to upload, share, and download study materials. The platform features an admin panel for managing materials and user submissions.
 
-## Table of Contents
-
-- [Features](#features)
-- [Preview](#Preview)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Features
 
 - **User-Friendly Interface**: Easy to navigate and use for uploading and downloading materials.
@@ -20,13 +10,18 @@ A web application that allows students to upload, share, and download study mate
 - **Search Functionality**: Users can search for materials by title, description, or author.
 - **Responsive Design**: The application is designed to work on various devices, including mobile phones and tablets.
 
-##Preview
+## Preview
 <div style="display: flex; gap: 10px;">
   <img src="https://github.com/user-attachments/assets/8944960f-ba35-4d74-8cf3-0345eb3ca299" alt="Homepage View" width="45%" />
   <img src="https://github.com/user-attachments/assets/3819fc11-aca5-4b15-bf6c-7f897b5ec7a9" alt="Product Category Page" width="45%" />
   <img src="https://github.com/user-attachments/assets/4bcae849-553e-40a2-aec9-d18ea1fc38de" alt="Product Category Page" width="45%" />
   <img src="https://github.com/user-attachments/assets/385f4fce-15bc-489e-9f68-685c2c971e79" alt="Product Category Page" width="45%" />
 </div>
+
+## Demo Site
+
+[![Project Demo](https://img.shields.io/badge/Project-Demo-blue?style=for-the-badge)](https://note-sharing-web-application-6ivr3e0ck-akash-de-alwis-projects.vercel.app/)
+
 
 ## Technologies Used
 
